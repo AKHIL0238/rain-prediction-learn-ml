@@ -23,9 +23,9 @@ if st.button("Predict Rain"):
     st.success("🌧️ Rain is likely today")
 
         # Play rain sound
-    audio_file = open("rain.mp3", "rb")
-    audio_bytes = audio_file.read()
-    st.audio(audio_bytes, format="audio/mp3")
+    with open("rain.mp3", "rb") as audio_file:
+            st.audio(audio_file.read(), format="audio/mp3", autoplay=True)
 
     # else:
     #     st.info("☀️ No rain expected today")
+
