@@ -20,12 +20,23 @@ if st.button("Predict Rain"):
     prediction = model.predict(input_data)
 
     # if prediction[0] == 1:
-    st.success("🌧️ Rain is likely today")
+st.success("🌧️ Rain is likely today")
 
         # Play rain sound
-    with open("rain.mp3", "rb") as audio_file:
-            st.audio(audio_file.read(), format="audio/mp3", autoplay=True)
+with open("rain.mp3", "rb") as f:
+    st.audio(f.read(), autoplay=True)
+
+st.markdown(
+    """
+    <style>
+    audio { display: none; }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
     # else:
     #     st.info("☀️ No rain expected today")
+
 
